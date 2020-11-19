@@ -1,3 +1,11 @@
-fetch('https://jsonplaceholder.typicode.com/todos/1')
+fetch('assets/json/catalog.json')
   .then(response => response.json())
-  .then(json => console.log(json))
+  .then(catalog => {
+    loadInHTML(catalog);
+  })
+
+
+function loadInHTML(catalog){
+    console.log(catalog);
+    console.log(catalog[0].produit0);
+}
