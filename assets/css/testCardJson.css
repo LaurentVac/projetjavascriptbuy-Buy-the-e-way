@@ -1,0 +1,9 @@
+html, body {
+    background-color: #909090;
+}
+
+#imgBike {
+    /* height: 400px !important; */
+    width: auto;
+    /* max-width: 600px !important; */
+}
