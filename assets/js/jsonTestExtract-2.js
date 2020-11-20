@@ -1,5 +1,5 @@
 // déclaration tableau pour recevoir données json
-let catalog = [];
+var catalog = [];
 
 // récupération des données json via methode fetch
 fetch('assets/json/catalog.json')
@@ -22,24 +22,17 @@ function loadInHTML(){
       // attribution du nouvel id
       clone.id = catalog[index].id;
       let cloneChild = clone.children;
-      console.log("clonechild",cloneChild);
+      console.log(cloneChild);
       let cardChild = cloneChild[0].children; 
-      console.log("cardChild",cardChild);
       let cardChildBody = cardChild[1].children; 
-      console.log("cardBody",cardChildBody);
-      let cardBtnChild = cardChild[2];
-      console.log("bntchild",cardBtnChild);
-      let cardRefChild = cardChild[3];
-      console.log("ref", cardRefChild);
 
       // Déclaration varialbles 
       let cardPicture = cardChild[0];
-      // cardPicture = document.querySelector('#' + clone.id + ' .card-img-top');
       let cardPrice = cardChildBody[0];
       let cardProduct = cardChildBody[1];
       let cardPara = cardChildBody[2];
-      let cardBtn = cardBtnChild.querySelector('.btn');
-      let cardRef = cardRefChild.querySelector('.text-muted');
+      let cardBtn = cardChild[2].querySelector('.btn');
+      let cardRef = cardChild[3].querySelector('.text-muted');
 
       //  ------- Insertion des données récupéré du json --------- //
 
@@ -48,9 +41,15 @@ function loadInHTML(){
         cardPicture.alt = "photo " + catalog[index].product;
 
         if (catalog[index].categories == "hoverboard") {
-          cardPara.style.height = "30px";
+          cardPara.style.height = "40px";
+        } else 
+        if (catalog[index].categories == "bike") {
+          cardPara.style.height = "150px";
+        } else
+        if (catalog[index].categories == "draisienne") {
+          cardPara.style.height = "100px";
         } else {
-          cardPara.style.height = "135px";
+          cardPara.style.height = "100px";
         }
         
         cardPrice.innerHTML = catalog[index].price + "€";
@@ -67,27 +66,9 @@ function loadInHTML(){
       document.getElementById('mainRow').appendChild (clone);
 
     });
+
+    // On cache la card example
+    let maskClone = document.querySelector('#cardToClone');
+    maskClone.classList.add('d-none');
+
 }
-
-
-
-
-
-
-
-
-
-
-
-// let i = 0;
-
-// function cloneDiv() {
-//     i++;
-//     cloneFirstName = document.getElementById("firstName").cloneNode(true);
-//     cloneAge = document.getElementById("age").cloneNode(true);
-//     cloneFirstName.id += i;
-//     document.getElementById('form').appendChild (cloneFirstName);
-//     cloneAge.id += i;
-//     document.getElementById('form').appendChild (cloneAge);
-
-// }
