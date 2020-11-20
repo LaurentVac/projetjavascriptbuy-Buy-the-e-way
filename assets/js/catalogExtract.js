@@ -8,7 +8,7 @@ fetch('assets/json/catalog.json')
         //variable catalog récupère le json et loadInHtml sort les données pour les traiter
         catalog = json;
         loadInHTML();
-        //loadInCART();
+        loadInCART();
     })
 
 
@@ -23,7 +23,7 @@ function loadInHTML() {
         // attribution du nouvel id
         clone.id = catalog[index].id;
         let cloneChild = clone.children;
-        console.log(cloneChild);
+        // console.log(cloneChild);
         let cardChild = cloneChild[0].children;
         let cardChildBody = cardChild[1].children;
 
@@ -79,3 +79,4 @@ function loadInHTML() {
 
     return catalog;
 };
+
