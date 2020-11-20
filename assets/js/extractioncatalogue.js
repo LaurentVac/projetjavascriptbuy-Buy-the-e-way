@@ -1,5 +1,5 @@
 // déclaration tableau pour recevoir données json
-let catalog = [];
+var catalog = [];
 
 // récupération des données json via methode fetch
 fetch('assets/json/catalog.json')
