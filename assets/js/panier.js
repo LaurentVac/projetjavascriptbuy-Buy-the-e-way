@@ -10,12 +10,11 @@ function loadInCART(){
   //accès au bouton des cartes 
   //éventuellement le selecteur à mettre à jour
   let btnCartAdd = document.querySelectorAll('button[data-ref]')
-  console.log(btnCartAdd);
+  // console.log(btnCartAdd);
   
   //ajout des listeners sur les boutons et récupération de l'attribut data-ref   du bouton
   btnCartAdd.forEach(item => {;
     item.addEventListener('click', ()=>{
-      console.log(item);
       //récupération de l'attribut data-ref du bouton
       let ref = item.getAttribute('data-ref');
       console.log(ref);
@@ -26,16 +25,28 @@ function loadInCART(){
   
   
   function addProductToCart(a){
-    //boucler sur le catalogue pour trouver l'objet avec la bonne ref
-    for(const element of catalog){
+    //vérifier si l'objet est déjà dans le panier
+    //ça marche pas car je boucle sur un panier vide
+
+    // Il faut boucler sur le catalogue et ensuite seulement vérifier si l'objet est déjà présent dans le panier
+    for(const element of panier){
       if(element.id == a){
-        console.log('trouvé !');
-        //ajouter l'objet au panier
-        panier.push(element);
+        element.quantity + 1;
         console.log(panier);
-      
-        //on pourra récuperer la length du tableau pour afficher le compteur à   ce moment la 
-      };
-    };
+
+      } else {
+        //boucler sur le catalogue pour trouver l'objet avec la bonne ref
+        for(const object of catalog){
+          if(object.id == a){
+            console.log('trouvé !');
+            //ajouter l'objet au panier
+            panier.push(object);
+            console.log(panier);
+          
+            //on pourra récuperer la length du tableau pour afficher le compteur    à   ce moment la 
+          };
+        };
+      };};
+    console.log(panier);
   };
 };
