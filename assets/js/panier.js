@@ -28,26 +28,33 @@ function loadInCART() {
   function addProductToCart(a) {
     //vérifier si l'objet est déjà dans le panier
     //ça marche pas car je boucle sur un panier vide
-
-    // Il faut boucler sur le catalogue et ensuite seulement vérifier si l'objet est déjà présent dans le panier
-    for (const object of catalog) {
-      if (object.id == a && panier.length == 0) {
-        console.log('ajout au panier !');
-        //ajouter l'objet au panier
-        panier.push(object);
-        console.log(panier);
-      } else {
-        for (const element of panier) {
-          if (element.id == a) {
-            console.log('quantité +1');
-            element.quantity + 1;
-            console.log(panier);
+    if(panier.length == 0){
+      for (const object of catalog) {
+        if (object.id == a) {
+          console.log('ajout au panier !');
+          //ajouter l'objet au panier
+          panier.push(object);
+          console.log(panier);
+        };
+      };
+    } else {
+      for(const element of panier) {
+        if(element.id == a){
+          console.log('quantité +1');
+          element.quantity += 1;
+          console.log(panier);
+        } else {
+          console.log('pas dans le panier on ajoute au panier !');
+          for (const object of catalog) {
+            if (object.id == a) {
+              //ajouter l'objet au panier
+              panier.push(object);
+              console.log(panier);
+            };
           };
         };
       };
     };
-
-
     //fonction pour ajouter au panier qui marche
 
     //     //boucler sur le catalogue pour trouver l'objet avec la bonne ref
@@ -62,6 +69,6 @@ function loadInCART() {
     //       };
     //     };
     //   };};
-    console.log(panier);
+    // console.log(panier);
   };
 };
