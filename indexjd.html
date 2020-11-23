@@ -17,13 +17,13 @@
     <div class="container">
 
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <h1 class="navbar-brand">Buy the e-way</h1>
+            <img id="titleimg" src="assets/img/buyLogo.png" alt="logobuytheeway">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
                 <!-- Menu deroulant qui est caché en mode desktop et devient menu burger visible en responsive -->
@@ -104,26 +104,26 @@
     <div id="mainContent" class="container">
         <div id="mainRow" class="row">
             <!-- menu de navigation à gauche -->
-            <div class="d-none d-lg-block col-lg-2 h-100">
+            <div class="categorielg d-none d-lg-block col-lg-2 mt-3 h-100 ">
                 <h2>Catégorie</h2>
-                <div><a href="#">Vélo</a></div>
-                <div><a href="#">Trotinettes</a></div>
-                <div><a href="#">Overboards</a></div>
-                <div><a href="#">Draisiennes</a></div>
+                <div ><a class="navlg" href="#">Vélo</a></div>
+                <div ><a class="navlg" href="#">Trotinettes</a></div>
+                <div ><a class="navlg" href="#">Overboards</a></div>
+                <div ><a class="navlg"href="#">Draisiennes</a></div>
             </div>
-        <div class="col-12 col-lg-10">
+        <main class="col-12 col-lg-10">
             <div id="cardRow" class="row">
                 <!-- Modèle de card  -->
                 <div id="cardLayout" class="col-lg-6">
                     <div class="row">
-                        <div class="card text-default mt-3 p-3">
+                        <div class="cardv card text-default mt-3 p-3 ml-2 ">
                             <img class="card-img-top img-fluid mb-3 px-5" src="" alt="A remplir dynamiquement">
                             <div class="card-body">
                                 <h3 class="card-title text-center mb-4">Prix</h3>
                                 <h6 class="card-subTitle mb-3 text-primary">Nom du produit</h6>
                                 <p class="card-text">Description du produit</p>
                             </div>
-                            <div class="text-center mb-4"><button class="btn btn-primary">J'ACHETE !</button></div>
+                            <div class="text-center "><button class="btn btn-primary">J'ACHETE !</button></div>
                             <div class="card-footer">
                                 <small class="text-muted">Référence produit</small>
                             </div>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
             
 
         </div>
