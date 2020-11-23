@@ -57,12 +57,12 @@ function loadInHTML() {
         cardRef.innerHTML = "Réf: " + catalog[index].ref;
         cardRef.style.fontSize = "20px";
 
+        // ajout attribut data-ref au bouton "J'achète"
+        cardBtn.setAttribute('data-ref', catalog[index].id);
         // clonage de la card
         clone = cardLayout.cloneNode(true);
         // attribution nouvel id
         clone.id = catalog[index].id;
-        // ajout attribut data-ref au bouton "J'achète"
-        cardBtn.setAttribute('data-ref', clone.id);
 
         // ajout de la nouvelle card dans div row "mainRow"
         document.getElementById('cardRow').appendChild(clone);
