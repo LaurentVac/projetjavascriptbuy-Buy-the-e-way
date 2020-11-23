@@ -1,18 +1,5 @@
 //Déclaration des tableaux
-let panier = [];
- let catalog = [];
-
-
- fetch('assets/json/catalog.json')
-   .then(response => response.json())
-   .then(json => {catalog = json;
-     loadInHTML();
-   });
-
-function loadInHTML(){
-  console.log(catalog);
-};
-
+var panier = [];
 //accès au bouton des cartes 
 //éventuellement le selecteur à mettre à jour
 let btnCartAdd = document.querySelectorAll('.card-body a')
@@ -44,3 +31,8 @@ function addProductToCart(a){
     };
   };
 };
+ 
+
+
+
+

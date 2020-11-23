@@ -8,7 +8,7 @@ fetch('assets/json/catalog.json')
         //variable catalog récupère le json et loadInHtml sort les données pour les traiter
         catalog = json;
         loadInHTML();
-        //loadInCART();
+        loadInCART();
     })
 
 
