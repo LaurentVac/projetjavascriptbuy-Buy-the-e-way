@@ -65,7 +65,7 @@ function loadInHTML() {
         cardBtn.setAttribute('data-ref', clone.id);
 
         // ajout de la nouvelle card dans div row "mainRow"
-        document.getElementById('mainRow').appendChild(clone);
+        document.getElementById('cardRow').appendChild(clone);
 
     });
 
