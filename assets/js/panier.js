@@ -11,7 +11,7 @@ function loadInCART() {
   //éventuellement le selecteur à mettre à jour
   let btnCartAdd = document.querySelectorAll('button[data-ref]')
 
-  //ajout des listeners sur les boutons et récupération de l'attribut data-ref   du bouton
+  //ajout des listeners sur les boutons et récupération de l'attribut data-ref du bouton
   btnCartAdd.forEach(item => {
     ;
     item.addEventListener('click', () => {
@@ -25,6 +25,7 @@ function loadInCART() {
 
 
   function addProductToCart(a) {
+    
     //si le panier est vide on ajoute forcement l'objet au panier
     if (panier.length == 0) {
       for (var object of catalog) {
@@ -36,42 +37,34 @@ function loadInCART() {
         }; 
       };
     } else{
-      // Si le panier n'est pas vide on cherche si l'object y est déjà et on y ajoute +1 en quantité
+      let present = [];
+      // Pour tout les élements du panier on regarde si l'element qu'on veux ajouter est déjà présent ou non et on repertorie dans le tableau present les reponses
       for (const element of panier) {
         console.log('element id ' + element.id +' - a '+ a);
+        
         if (element.id == a) {
-          console.log('quantité +1');
-          element.quantity += 1;
-          console.log(panier);
-          break;
-
-        } else { // le problème c'est que lorsqu'il y a plusieurs objets dans le panier ça continue de boucler
-          console.log('pas dans le panier on ajoute au panier !');
+          present.push(true);
+        } else{
+          present.push(false);
+        }
+      };
+      console.log(present);
+      // On regarde s'il y a au moins 1 true dans le tableau present
+      if(present.indexOf(true) != -1){
+        // on recupère l'index du true qui correspond à celui du panier et on ajoute +1 à la quantity
+        panier[present.indexOf(true)].quantity +=1;
+      } else{
+        // S'il n'y a pas de true on ajoute au panier l'objet correspondant
+        console.log('pas dans le panier on ajoute au panier !');
           for (const object of catalog) {
             if (object.id == a) {
               //ajouter l'objet au panier
               panier.push(object);
-              console.log(panier);
             };
           };
-          break;
         };
-      };
+        console.log(panier);
+
+        };
     };
-    //fonction pour ajouter au panier qui marche
-
-    //     //boucler sur le catalogue pour trouver l'objet avec la bonne ref
-    //     for(const object of catalog){
-    //       if(object.id == a){
-    //         console.log('trouvé !');
-    //         //ajouter l'objet au panier
-    //         panier.push(object);
-    //         console.log(panier);
-
-    //         //on pourra récuperer la length du tableau pour afficher le compteur    à   ce moment la 
-    //       };
-    //     };
-    //   };};
-    // console.log(panier);
-  };
 };
