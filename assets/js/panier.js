@@ -13,7 +13,7 @@ function loadInCART() {
 
   //ajout des listeners sur les boutons et récupération de l'attribut data-ref du bouton
   btnCartAdd.forEach(item => {
-    ;
+    
     item.addEventListener('click', () => {
       //récupération de l'attribut data-ref du bouton
       let ref = item.getAttribute('data-ref');
@@ -67,3 +67,9 @@ function loadInCART() {
         };
     };
 };
+
+
+
+
+
+
