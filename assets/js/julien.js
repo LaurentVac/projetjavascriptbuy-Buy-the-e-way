@@ -19,7 +19,7 @@ cartIn.onclick = function() {
         orderTitle.innerHTML = panier[index].product;
 
         let price = document.getElementById('price');
-        price.innerHTML = panier[index].price + '€';
+        price.innerHTML = (panier[index].price * panier[index].quantity) + '€';
 
         let quantity = document.getElementById('quantity');
         quantity.innerHTML = panier[index].quantity;
