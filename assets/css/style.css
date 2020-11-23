@@ -3,4 +3,32 @@ body,html {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: #4296CF !important;
+}
+#titleimg{
+   /* height: 35px;*/
+   width: 40%;
+}
+
+#navbar{
+    background-color: #4296CF !important;
+    
+}
+.navlg{
+    color: black;
+    font-size: 150%;
+    
+    
+}
+h2{
+    font-weight: bold;
+}
+.categorielg{
+    background-color:#B0BEC5;
+    border-radius: 10%;
+    
+}
+.cardv{
+    
+    width: 80%;
 }
