@@ -4,6 +4,8 @@
 
 let cartIn = document.getElementById('cartIn');
 cartIn.onclick = function() {
+    
+    document.getElementById('mainModal').innerHTML = '';
 
     panier.forEach((item, index) => {
 
@@ -30,8 +32,8 @@ cartIn.onclick = function() {
 
     });
 
-    let mask = document.getElementById('exampleObject');
-    mask.classList.add('d-none');
+    // let mask = document.getElementById('exampleObject');
+    // mask.classList.add('d-none');
 
 
 }
