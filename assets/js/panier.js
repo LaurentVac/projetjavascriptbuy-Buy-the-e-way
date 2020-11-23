@@ -52,7 +52,7 @@ function loadInCART() {
       // On regarde s'il y a au moins 1 true dans le tableau present
       if(present.indexOf(true) != -1){
         // on recupère l'index du true qui correspond à celui du panier et on ajoute +1 à la quantity
-        panier[present.indexOf(true)].quantity +=1;
+        panier[present.indexOf(true)].quantity += 1;
       } else{
         // S'il n'y a pas de true on ajoute au panier l'objet correspondant
         console.log('pas dans le panier on ajoute au panier !');
@@ -64,7 +64,6 @@ function loadInCART() {
           };
         };
         console.log(panier);
-
         };
     };
 };
