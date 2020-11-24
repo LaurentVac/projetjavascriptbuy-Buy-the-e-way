@@ -11,7 +11,12 @@ fetch('assets/json/catalog.json')
     })
 
 
-function loadInHTML(catalog) {
+function loadInHTML(catalog, text) {
+
+    innerDelete = document.getElementById('cardRow');
+    innerDelete.innerHTML = "";
+
+    console.log(text,catalog);
 
     // boucle sur catalog pour extraire les données et les implanter dans les "card" générées dynamiquement
     catalog.forEach((object, index) => {
@@ -177,7 +182,7 @@ function removeArticleQuantity(id) {
             cart[index].quantity -= 1;
             console.log(cart[index].quantity,"qty");
             quantity.innerHTML = cart[index].quantity;
-            price.innerHTML = (cart[index].price * cart[index].quantity) + '€';
+            price.innerHTML = Math.round((cart[index].price * cart[index].quantity)) + '€';
            }
 
         }
@@ -199,14 +204,23 @@ function addArticleQuantity(id) {
         
         if (getId == cart[index].id) {
            console.log("getIdMore!!",cart[index].id);
-           if (cart[index].quantity != 0) {
-            cart[index].quantity += 1;
+           cart[index].quantity += 1;
             console.log(cart[index].quantity,"qty");
             quantity.innerHTML = cart[index].quantity;
             price.innerHTML = (cart[index].price * cart[index].quantity) + '€';
-           }
 
         }
 
     })
+}
+
+
+function catalogFilter(category) {
+
+    var tabFiltered = catalog.filter(function(element) {
+        return element.categories == category;
+    });
+
+    loadInHTML(tabFiltered,"hello");
+    console.log("newcat");
 }
