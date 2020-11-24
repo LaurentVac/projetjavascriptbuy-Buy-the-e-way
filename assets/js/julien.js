@@ -88,7 +88,7 @@ cartIn.onclick = function() {
     function removeQty(a){
       //modifier la quantité de l'objet dans le panier
       for(const element of panier){
-        if(element.id == ref){
+        if(element.id == a){
           element.quantity -= 1;
           console.log(panier);
 
