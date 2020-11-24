@@ -50,7 +50,7 @@
                 </ul>
             </div>
 
-            <!-- Bouton "panier"qui appelera une modal  -->
+            <!-- Bouton "panier" qui appelera une modal  -->
 
             <button id="cartIn" type="button" class="btn btn-success mt-3" data-toggle="modal"
                 data-target="#modal">Panier
@@ -69,25 +69,6 @@
 
                         <div class="modal-body">
                             <div id="mainModal" class="container-fluid">
-                                <div class="row" id="exampleObject">
-
-                                    <div class="col-5">
-                                        <img class="img-fluid" src="" alt="Image a afficher">
-                                    </div>
-
-                                    <div class="col-5">
-                                        <div id="orderTitle" class='text-center'>titre de l'article</div>
-
-                                        <div class="d-flex justify-content-center">
-                                            <input type="button" value="-">
-                                            <span class="mx-3" id="quantity">quantité</span>
-                                            <input type="button" value="+">
-                                        </div>
-
-                                    </div>
-
-                                    <div id="price" class="col-2">prix</div>
-                                </div>
 
                             </div>
 
@@ -98,6 +79,9 @@
 
                             <button id="orderValid" type="button" class="btn btn-success">Valider la commande</button>
                         </div>
+                    </div>
+                </div>
+            </div>
 
         </nav>
     </div>
@@ -106,10 +90,10 @@
             <!-- menu de navigation à gauche -->
             <div class="categorielg d-none d-lg-block col-lg-2 mt-3 h-100 ">
                 <h2>Catégorie</h2>
-                <div ><a class="navlg" href="#">Vélo</a></div>
-                <div ><a class="navlg" href="#">Trotinettes</a></div>
-                <div ><a class="navlg" href="#">Overboards</a></div>
-                <div ><a class="navlg"href="#">Draisiennes</a></div>
+                <div ><a class="navlg1" href="#">Vélo</a></div>
+                <div ><a class="navlg2" href="#">Trotinettes</a></div>
+                <div ><a class="navlg3" href="#">Overboards</a></div>
+                <div ><a class="navlg4"href="#">Draisiennes</a></div>
             </div>
         <main class="col-12 col-lg-10">
             <div id="cardRow" class="row">
@@ -137,7 +121,29 @@
         </div>
     </div>
 
+    <div class="d-none">
+        <div class="row" id="exampleObject">
 
+            <div class="col-5">
+                <img class="img-fluid" src="" alt="Image a afficher">
+            </div>
+
+            <div class="col-5">
+                <div class="modal-title text-center">titre de l'article</div>
+
+                <div class="d-flex justify-content-center">
+                    <input class="btn1" type="button" onclick="removeArticleQuantity(id)" value="-">
+                    <span class="modal-quantity mx-3" >quantité</span>
+                    <input class="btn2" type="button" onclick=addArticleQuantity(id) value="+">
+                </div>
+                
+
+            </div>
+
+            <div id="price" class="col-2">prix</div>
+        </div>
+
+    </div>
 
 
 
